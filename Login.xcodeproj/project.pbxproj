@@ -14,6 +14,8 @@
 		BC306B7D28395E2300F09F63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC306B7C28395E2300F09F63 /* Assets.xcassets */; };
 		BC306B8028395E2300F09F63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC306B7E28395E2300F09F63 /* LaunchScreen.storyboard */; };
 		BC306B8928395E9A00F09F63 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC306B8828395E9A00F09F63 /* SignUpViewController.swift */; };
+		BC306B8B283961EF00F09F63 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC306B8A283961EF00F09F63 /* LoginViewController.swift */; };
+		BC306B8D283961FF00F09F63 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC306B8C283961FF00F09F63 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		BC306B7F28395E2300F09F63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC306B8128395E2300F09F63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC306B8828395E9A00F09F63 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		BC306B8A283961EF00F09F63 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BC306B8C283961FF00F09F63 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				BC306B8828395E9A00F09F63 /* SignUpViewController.swift */,
+				BC306B8A283961EF00F09F63 /* LoginViewController.swift */,
+				BC306B8C283961FF00F09F63 /* HomeViewController.swift */,
 			);
 			path = ViiewControllers;
 			sourceTree = "<group>";
@@ -152,7 +158,9 @@
 				BC306B7828395E2100F09F63 /* ViewController.swift in Sources */,
 				BC306B7428395E2100F09F63 /* AppDelegate.swift in Sources */,
 				BC306B8928395E9A00F09F63 /* SignUpViewController.swift in Sources */,
+				BC306B8B283961EF00F09F63 /* LoginViewController.swift in Sources */,
 				BC306B7628395E2100F09F63 /* SceneDelegate.swift in Sources */,
+				BC306B8D283961FF00F09F63 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
