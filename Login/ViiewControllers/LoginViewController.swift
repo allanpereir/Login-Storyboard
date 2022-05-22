@@ -9,21 +9,28 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var firstNameTextFiedl: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var errorTextLabel: UILabel!
+    @IBOutlet weak var btnLogin: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setUpElements()
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setUpElements() {
+        //hide the error label
+        errorTextLabel.alpha = 0
+        Utilities.styleTextField(firstNameTextFiedl)
+        Utilities.styleTextField(lastNameTextField)
+        Utilities.styleButton(btnLogin)
     }
-    */
+    
+    @IBAction func btnLogin(_ sender: UIButton) {
+    }
+    
 
 }

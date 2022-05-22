@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RXg-M4-fq6">
-                                <rect key="frame" x="40" y="751" width="334" height="71"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RXg-M4-fq6">
+                                <rect key="frame" x="40" y="731" width="334" height="91"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYn-yd-BFp">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
@@ -26,11 +26,17 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
+                                        <connections>
+                                            <segue destination="sX1-Gx-1nI" kind="show" id="Uiu-zL-ukU"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3On-R5-GQc">
-                                        <rect key="frame" x="0.0" y="40" width="334" height="31"/>
+                                        <rect key="frame" x="0.0" y="60" width="334" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                                        <connections>
+                                            <segue destination="YVG-7H-ryZ" kind="show" id="F2s-We-qWh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -47,6 +53,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Bxs-to-RiR"/>
+                    <connections>
+                        <outlet property="loginButtom" destination="3On-R5-GQc" id="54r-5S-U9O"/>
+                        <outlet property="signUpButton" destination="HYn-yd-BFp" id="ZNp-BF-S6Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -61,7 +71,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ZLD-Ur-ENs">
-                                <rect key="frame" x="40" y="84" width="334" height="370.5"/>
+                                <rect key="frame" x="40" y="128" width="334" height="370.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JTZ-xN-G1h">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
@@ -89,7 +99,10 @@
                                             <constraint firstAttribute="height" constant="40" id="n00-Mz-AI6"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Sing Up"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
+                                        <connections>
+                                            <action selector="btnSingUp:" destination="sX1-Gx-1nI" eventType="touchUpInside" id="Qgt-fs-lfG"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6d-jL-ex1">
                                         <rect key="frame" x="0.0" y="350" width="334" height="20.5"/>
@@ -114,6 +127,15 @@
                             <constraint firstItem="4mY-rA-SDi" firstAttribute="trailing" secondItem="ZLD-Ur-ENs" secondAttribute="trailing" constant="40" id="gvW-RK-6Wc"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="yIg-zS-Dsv"/>
+                    <connections>
+                        <outlet property="btnSignUp" destination="ORc-0R-Psj" id="0g2-mO-Tay"/>
+                        <outlet property="emailTextField" destination="FZ5-Jt-KUB" id="np6-Ib-81k"/>
+                        <outlet property="errorLabel" destination="Y6d-jL-ex1" id="kV3-Oh-cXZ"/>
+                        <outlet property="firstNameTextField" destination="JTZ-xN-G1h" id="wJp-Vu-DFg"/>
+                        <outlet property="lastNameTextField" destination="QfA-z1-Wtq" id="EMv-Mq-E9c"/>
+                        <outlet property="passwordTextField" destination="sgy-lC-ZLn" id="uAO-jv-GhO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eyh-UX-9Jo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -128,9 +150,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="HlG-jU-fpD">
-                                <rect key="frame" x="40" y="84" width="334" height="200.5"/>
+                                <rect key="frame" x="40" y="128" width="334" height="200.5"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="etu-CG-xsd">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="etu-CG-xsd">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="YhL-eW-l7F"/>
@@ -138,15 +160,18 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OSe-Ck-BxG">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OSe-Ck-BxG">
                                         <rect key="frame" x="0.0" y="60" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbE-A4-pIG">
                                         <rect key="frame" x="0.0" y="120" width="334" height="40"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                                        <connections>
+                                            <action selector="btnLogin:" destination="YVG-7H-ryZ" eventType="touchUpInside" id="XfK-2K-IBb"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sz1-ab-yhb">
                                         <rect key="frame" x="0.0" y="180" width="334" height="20.5"/>
@@ -169,6 +194,13 @@
                             <constraint firstItem="rCM-hf-bdB" firstAttribute="trailing" secondItem="HlG-jU-fpD" secondAttribute="trailing" constant="40" id="vWk-jG-dG6"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="nBd-gp-m5Q"/>
+                    <connections>
+                        <outlet property="btnLogin" destination="hbE-A4-pIG" id="Cl9-Pz-FSm"/>
+                        <outlet property="errorTextLabel" destination="sz1-ab-yhb" id="POR-pE-LV7"/>
+                        <outlet property="firstNameTextFiedl" destination="etu-CG-xsd" id="TM7-mZ-PT0"/>
+                        <outlet property="lastNameTextField" destination="OSe-Ck-BxG" id="lX7-cQ-PCY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EH0-Ev-otX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -182,8 +214,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v10-9R-xJA">
-                                <rect key="frame" x="184" y="437.5" width="46" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v10-9R-xJA">
+                                <rect key="frame" x="169" y="437.5" width="76" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

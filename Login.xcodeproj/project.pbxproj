@@ -16,6 +16,7 @@
 		BC306B8928395E9A00F09F63 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC306B8828395E9A00F09F63 /* SignUpViewController.swift */; };
 		BC306B8B283961EF00F09F63 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC306B8A283961EF00F09F63 /* LoginViewController.swift */; };
 		BC306B8D283961FF00F09F63 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC306B8C283961FF00F09F63 /* HomeViewController.swift */; };
+		BC3E4019283A9F69008C1E40 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E4018283A9F69008C1E40 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		BC306B8828395E9A00F09F63 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		BC306B8A283961EF00F09F63 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BC306B8C283961FF00F09F63 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BC3E4018283A9F69008C1E40 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +64,10 @@
 		BC306B7228395E2100F09F63 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				BC3E4015283A9DAE008C1E40 /* Helpers */,
 				BC306B8728395E8400F09F63 /* ViiewControllers */,
 				BC306B7328395E2100F09F63 /* AppDelegate.swift */,
 				BC306B7528395E2100F09F63 /* SceneDelegate.swift */,
-				BC306B7728395E2100F09F63 /* ViewController.swift */,
 				BC306B7928395E2100F09F63 /* Main.storyboard */,
 				BC306B7C28395E2300F09F63 /* Assets.xcassets */,
 				BC306B7E28395E2300F09F63 /* LaunchScreen.storyboard */,
@@ -77,11 +79,20 @@
 		BC306B8728395E8400F09F63 /* ViiewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BC306B7728395E2100F09F63 /* ViewController.swift */,
 				BC306B8828395E9A00F09F63 /* SignUpViewController.swift */,
 				BC306B8A283961EF00F09F63 /* LoginViewController.swift */,
 				BC306B8C283961FF00F09F63 /* HomeViewController.swift */,
 			);
 			path = ViiewControllers;
+			sourceTree = "<group>";
+		};
+		BC3E4015283A9DAE008C1E40 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BC3E4018283A9F69008C1E40 /* Utilities.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +171,7 @@
 				BC306B8928395E9A00F09F63 /* SignUpViewController.swift in Sources */,
 				BC306B8B283961EF00F09F63 /* LoginViewController.swift in Sources */,
 				BC306B7628395E2100F09F63 /* SceneDelegate.swift in Sources */,
+				BC3E4019283A9F69008C1E40 /* Utilities.swift in Sources */,
 				BC306B8D283961FF00F09F63 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
