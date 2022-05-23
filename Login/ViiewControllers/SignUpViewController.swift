@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+
 
 class SignUpViewController: UIViewController {
 
@@ -49,9 +51,9 @@ class SignUpViewController: UIViewController {
             return "Preencha todos os campos!"
         }
         
-        let safePasswordValid = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let safePasswordValid = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        if Utilities.isPasswordValid(safePasswordValid!) == false {
+        if Utilities.isPasswordValid(safePasswordValid) == false {
             return "Por favor, forneça uma senha que contenha no minimo 8 caracter, que contenha um caracter especial e numeros!"
             
         }
@@ -60,12 +62,23 @@ class SignUpViewController: UIViewController {
     
     @IBAction func btnSingUp(_ sender: UIButton) {
         
-        //validate the fields
+        let error = validateFields()
         
-        //create the user
-        
-        //transation to the welcome screen
-        
+        if error != nil {
+            self.errorLabel.text = error!
+            self.errorLabel.alpha = 1
+        }else {
+            Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { result, erro in
+                if erro != nil {
+                    self.errorLabel.text = "Erro na criação do usuario"
+                    self.errorLabel.alpha = 1
+                }
+                else {
+                    print("Criado!")
+                }
+            }
+            
+        }
     }
     
     
