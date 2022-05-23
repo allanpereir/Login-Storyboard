@@ -38,7 +38,33 @@ class SignUpViewController: UIViewController {
         
     }
     
+    //Check the fields and validate the data is correct.
+    func validateFields () -> String? {
+        
+        if firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)  ==  "" ||
+            lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)  == "" ||
+            emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)     == "" ||
+            passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)  == "" {
+                                                       
+            return "Preencha todos os campos!"
+        }
+        
+        let safePasswordValid = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        if Utilities.isPasswordValid(safePasswordValid!) == false {
+            return "Por favor, forneça uma senha que contenha no minimo 8 caracter, que contenha um caracter especial e numeros!"
+            
+        }
+        return nil
+    }
+    
     @IBAction func btnSingUp(_ sender: UIButton) {
+        
+        //validate the fields
+        
+        //create the user
+        
+        //transation to the welcome screen
         
     }
     
