@@ -35,9 +35,6 @@ class SignUpViewController: UIViewController {
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
         Utilities.styleButton(btnSignUp)
-   
-        
-        
     }
     
     //Check the fields and validate the data is correct.
@@ -70,11 +67,15 @@ class SignUpViewController: UIViewController {
         }else {
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { result, erro in
                 if erro != nil {
-                    self.errorLabel.text = "Erro na criação do usuario"
-                    self.errorLabel.alpha = 1
+                    Alert.basicAlert(on: self, with: "Erro no Cadastro dde Usuario", message: "Houve um erro no cadastro do Usuario!")
                 }
                 else {
-                    print("Criado!")
+                    Alert.basicAlert(on: self, with: "Cadastro de Usuario", message: "Usuario cadastrado com sucesso!")
+                    self.firstNameTextField.text = ""
+                    self.lastNameTextField.text = ""
+                    self.passwordTextField.text = ""
+                    self.errorLabel.text = ""
+                    self.emailTextField.text = ""
                 }
             }
             
