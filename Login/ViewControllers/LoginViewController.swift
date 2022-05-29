@@ -11,7 +11,6 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
-
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var errorTextLabel: UILabel!
@@ -22,6 +21,13 @@ class LoginViewController: UIViewController {
         
         setUpElements()
         // Do any additional setup after loading the view.
+    }
+    
+    func transitionToHome () {
+        
+        let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
     }
     
     func setUpElements() {
@@ -44,13 +50,12 @@ class LoginViewController: UIViewController {
                     self.userTextField.text = ""
                     self.passwordTextField.text = ""
                     
+                    self.transitionToHome ()
+                    
                 }
             }
             
         }
-         
         
     }
-    
-
 }
