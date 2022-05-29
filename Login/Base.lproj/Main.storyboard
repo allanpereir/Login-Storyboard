@@ -35,7 +35,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Login"/>
                                         <connections>
-                                            <segue destination="YVG-7H-ryZ" kind="show" id="F2s-We-qWh"/>
+                                            <segue destination="YVG-7H-ryZ" kind="show" identifier="LoginViewController" id="F2s-We-qWh"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -198,8 +198,8 @@
                     <connections>
                         <outlet property="btnLogin" destination="hbE-A4-pIG" id="Cl9-Pz-FSm"/>
                         <outlet property="errorTextLabel" destination="sz1-ab-yhb" id="POR-pE-LV7"/>
-                        <outlet property="firstNameTextFiedl" destination="etu-CG-xsd" id="TM7-mZ-PT0"/>
-                        <outlet property="lastNameTextField" destination="OSe-Ck-BxG" id="lX7-cQ-PCY"/>
+                        <outlet property="passwordTextField" destination="OSe-Ck-BxG" id="xuD-VP-Jpj"/>
+                        <outlet property="userTextField" destination="etu-CG-xsd" id="y96-xg-Uee"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EH0-Ev-otX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
