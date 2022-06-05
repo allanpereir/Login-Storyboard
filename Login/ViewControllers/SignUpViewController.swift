@@ -25,6 +25,13 @@ class SignUpViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func transitionToHome () {
+        
+        let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
+    }
+    
     func setUpElements(){
         
         //hide the error label
@@ -64,17 +71,16 @@ class SignUpViewController: UIViewController {
         if error != nil {
             self.errorLabel.text = error!
             self.errorLabel.alpha = 1
-        }else {
+        } else {
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { result, erro in
                 if erro != nil {
-                    Alert.basicAlert(on: self, with: "Erro no Cadastro de Usuario", message: "Houve um erro no cadastro do Usuario!")
+                    Alert.basicAlert(on: self, with: "Erro no Cadastro de Usuario", message: erro?.localizedDescription ?? "Erro")
                 }
                 else {
                    let db = Firestore.firestore()
                     
                     if let fName = self.firstNameTextField.text, let lName = self.lastNameTextField.text, let userEmail = self.emailTextField.text {
-                       
-                        
+                                               
                         db.collection("users").addDocument(data: [
                             "firstname": fName,
                             "lastname": lName,
@@ -83,12 +89,13 @@ class SignUpViewController: UIViewController {
                          
                     }
                  
-                    Alert.basicAlert(on: self, with: "Cadastro de Usuario", message: "Usuario cadastrado com sucesso!")
                     self.firstNameTextField.text = ""
                     self.lastNameTextField.text = ""
                     self.passwordTextField.text = ""
                     self.errorLabel.text = ""
                     self.emailTextField.text = ""
+                    
+                    self.transitionToHome()
                 }
             }
             
